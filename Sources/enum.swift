@@ -28,14 +28,14 @@ public extension RawRepresentable where RawValue:IntegerType {
     /**
      - Attention: the result will be correct only if all raw values are sequential and start from zero
      */
-    public static var allValues: [Self] {
-        var values = [Self]()
+    public static var allCases: [Self] {
+        var cases = [Self]()
         var i: RawValue = 0
-        while let value = Self(rawValue:i) {
-            values.append(value)
+        while let c = Self(rawValue:i) {
+            cases.append(c)
             i++
         }
-        return values
+        return cases
     }
 }
 
